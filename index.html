@@ -6,14 +6,6 @@
     <title>YDC Community</title>
     <link rel="icon" type="image/png" href="assets/ydc.png">
     <style>
-        :root {
-            --accent: #ff6b00;
-            --accent-hover: #e05e00;
-            --bg-dark: #0a0a0c;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -22,98 +14,38 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: #0a0a0c;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-        }
-
-        .background-glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        header {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .brand img {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            object-fit: cover;
-            border: 1px solid var(--accent);
-        }
-
-        .brand span {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-discord {
-            background: linear-gradient(135deg, #ff6b00, #ff8800);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-discord:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
-            background: linear-gradient(135deg, #e05e00, #ff6b00);
-        }
-
-        main {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            overflow: hidden;
         }
 
-        .hero {
-            text-align: center;
-            max-width: 750px;
+        .background-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
         }
 
-        .hero-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            margin-bottom: 2rem;
-            border: 2px solid var(--accent);
-            box-shadow: 0 0 35px rgba(255, 107, 0, 0.35);
+        .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 32px;
+            border: 2px solid #ff6b00;
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.35);
             animation: float 4s ease-in-out infinite;
         }
 
@@ -122,36 +54,23 @@
             50% { transform: translateY(-10px); }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
+        .btn-discord {
+            background: linear-gradient(135deg, #ff6b00, #ff8800);
+            color: #ffffff;
+            padding: 1.1rem 2.8rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        .btn-discord:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 0, 0.6);
+            background: linear-gradient(135deg, #e05e00, #ff6b00);
         }
     </style>
 </head>
@@ -159,30 +78,12 @@
 
     <div class="background-glow"></div>
 
-    <header>
-        <a href="#" class="brand">
-            <img src="assets/ydc.png" alt="YDC Community Icon">
-            <span>YDC</span>
-        </a>
+    <main class="container">
+        <img src="assets/ydc.png" alt="YDC Icon" class="icon">
         <a href="https://discord.gg/wHAc9uk8" target="_blank" class="btn-discord">
-            Join Discord
+            Discord Server
         </a>
-    </header>
-
-    <main>
-        <section class="hero">
-            <img src="assets/ydc.png" alt="YDC Logo" class="hero-icon">
-            <h1>Welcome to <span>YDC Community</span></h1>
-            <p>Connect with passionate members, share ideas, and stay updated in our official Discord server.</p>
-            <a href="https://discord.gg/wHAc9uk8" target="_blank" class="btn-discord" style="padding: 1.1rem 2.8rem; font-size: 1.15rem;">
-                Enter Discord Server
-            </a>
-        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 YDC Community. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
