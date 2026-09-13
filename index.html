@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YDC Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1px;
+        }
+
+        .btn-discord {
+            background-color: #5865f2;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-discord:hover {
+            background-color: #4752c4;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">YDC COMMUNITY</div>
+        <a href="https://discord.gg/wHAc9uk8" target="_blank" class="btn-discord">Join Discord</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to YDC Community</h1>
+            <p>Connect, share ideas, and engage with gamers, developers, and creators in our vibrant communityhub.</p>
+            <a href="https://discord.gg/wHAc9uk8" target="_blank" class="btn-discord" style="font-size: 1.1rem; padding: 1rem 2rem;">Join Our Discord Server</a>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <h3>Active Community</h3>
+                <p>Meet passionate members, discuss shared interests, and collaborate on exciting new ideas every day.</p>
+            </div>
+            <div class="card">
+                <h3>Exclusive Support</h3>
+                <p>Get direct support, technical insights, and helpful feedback from experienced community members.</p>
+            </div>
+            <div class="card">
+                <h3>Events & News</h3>
+                <p>Stay updated with the latest updates, participate in community events, and share your feedback directly.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 YDC Community. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
